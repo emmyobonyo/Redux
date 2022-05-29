@@ -13,6 +13,23 @@ export function increment() {
         }
     }
 }
+
+export function increment() {
+    return (dispatch, getState) => {
+        const number = getState()
+        const baseUrl = "https://swapi.co/api/people"
+        fetch(`baseUrl/${number}`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                dispatch({
+                    type: "INCREMENT",
+                    payload: res
+                })
+            })
+    }
+}
+
 export function decrement() {
     return {
         type: "DECREMENT"

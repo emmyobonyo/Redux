@@ -14,7 +14,7 @@ export function increment() {
     }
 }
 
-export function increment() {
+export function incrementDecrement() {
     return (dispatch, getState) => {
         const number = getState()
         const baseUrl = "https://swapi.co/api/people"
